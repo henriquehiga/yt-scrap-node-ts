@@ -5,17 +5,25 @@ export class ObtemInfoMix {
     const browser = await puppeteer.launch({
       headless: true,
     });
-    const selector = "a#video-title";
+    const videoPlaylistSelector = "a#video-title";
+    const playlistTitleSelector = "yt-formatted-string#text";
     const page = await browser.newPage();
     await page.goto(url);
-    await page.waitForSelector(selector);
-    let elements = await page.$$eval(selector, (e) =>
+    await page.waitForSelector(videoPlaylistSelector);
+    let playListTitle = await page.$eval(
+      playlistTitleSelector,
+      (e) => e.textContent
+    );
+    let elements = await page.$$eval(videoPlaylistSelector, (e) =>
       e.map((a) => ({
         url: a.href,
-        titulo: a.innerText,
+        titulo: a.textContent,
       }))
     );
     await browser.close();
-    return elements;
+    return {
+      titulo_playlist: playListTitle,
+      lista: elements,
+    };
   }
 }
