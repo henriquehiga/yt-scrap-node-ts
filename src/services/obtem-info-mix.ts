@@ -17,7 +17,7 @@ export class ObtemInfoMix {
     let elements = await page.$$eval(videoPlaylistSelector, (e) =>
       e.map((a) => ({
         url: a.href,
-        titulo: a.textContent,
+        titulo: a.innerText,
       }))
     );
     await browser.close();
