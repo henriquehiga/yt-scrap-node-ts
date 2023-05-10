@@ -56,7 +56,7 @@ Response:
 ]
 ```
 
-3 - Aguarde o script terminar de executar. Ao final, o script irá exibir a lista de objetos contendo o nome, URL e descrição de cada vídeo encontrado no YouTube Mix.
+3 - Aguarde o script terminar de executar. Ao final, o script irá exibir a lista de objetos contendo o titulo e url de cada vídeo encontrado no YouTube Mix.
 
 ## Observações
 
