@@ -5,6 +5,9 @@
   "repository": "https://github.com/codehiga/yt-scrap-node-ts.git",
   "author": "Henrique Higa <codehiga@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "npx ts-node src/app.ts"
+  },
   "devDependencies": {
     "@types/express": "^4.17.17",
     "@types/node": "^20.1.1",
